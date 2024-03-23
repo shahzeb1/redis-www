@@ -1,12 +1,17 @@
 import Header from "./components/header";
 import "./App.css";
+import RedisContainer from "./components/redis-container";
+import InfoContainer from "./components/info-container";
 
 function App() {
   return (
     <>
-      <div className="container">
+      <div className="container h-screen">
         <Header />
-        <h1>This is a shell</h1>
+        <div className="flex md:flex-col">
+          <RedisContainer />
+          <InfoContainer />
+        </div>
       </div>
     </>
   );
