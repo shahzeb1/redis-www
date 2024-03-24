@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <div>
       <div className="flex flex-col items-start justify-between space-y-2 py-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
-        <h2 className="text-lg font-semibold md:w-24 w-full">
-          <a href="/">app</a>
+        <h2 className="text-lg font-semibold md:w-12 w-full">
+          <a href="/">redis</a>
         </h2>
         <div className="flex flex-row md:items-center justify-between w-full">
           <div className="text-sm text-slate-500 dark:text-slate-300 sm:w-full">
