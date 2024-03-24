@@ -31,11 +31,19 @@ const Header = () => {
             </a>{" "}
             &cup;{" "}
             <a
-              href="https://blog.shahzeb.co/p/building-chatgpt-clone"
+              href="https://github.com/shahzeb1/redis-www"
               className="underline underline-offset-4"
               target="_blank"
             >
-              code
+              website code
+            </a>{" "}
+            &cup;{" "}
+            <a
+              href="https://github.com/shahzeb1/redis-rs"
+              className="underline underline-offset-4"
+              target="_blank"
+            >
+              rust code
             </a>
           </div>
           <div className="">
