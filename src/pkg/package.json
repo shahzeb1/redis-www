@@ -1,0 +1,16 @@
+{
+  "name": "redis",
+  "version": "0.1.0",
+  "files": [
+    "redis_bg.wasm",
+    "redis.js",
+    "redis_bg.js",
+    "redis.d.ts"
+  ],
+  "module": "redis.js",
+  "types": "redis.d.ts",
+  "sideEffects": [
+    "./redis.js",
+    "./snippets/*"
+  ]
+}
