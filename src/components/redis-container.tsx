@@ -22,7 +22,7 @@ const RedisContainer = () => {
   };
 
   return (
-    <div className="bg-slate-800 flex-1 rounded p-4 h-[calc(100vh-100pt)]">
+    <div className="bg-slate-800 grow rounded-xl p-4 h-[calc(100vh-100pt)] md:h-[calc(100vh-64pt)]">
       <div className="flex flex-col h-full">
         <RedisList data={data} ref={ref} />
         <div className="flex">

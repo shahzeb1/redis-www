@@ -8,7 +8,7 @@ type Props = {
 const RedisResponses = forwardRef<HTMLDivElement, { data: Data[] }>(
   ({ data }, ref) => {
     return (
-      <div className="mb-4 max-h-[calc(100vh-100pt)] overflow-y-scroll grow">
+      <div className="mb-4 max-h-[calc(100vh-100pt)] overflow-y-scroll grow no-scrollbar">
         {data.map((item, i) => (
           <div key={i} className="my-4 first:mt-0">
             <div className="text-slate-400">❯ {item.input}</div>

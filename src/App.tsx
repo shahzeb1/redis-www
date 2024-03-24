@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="container h-screen">
         <Header />
-        <div className="flex-col md:flex">
+        <div className="flex flex-col md:flex-row md:flex">
           <RedisContainer />
           <InfoContainer />
         </div>
