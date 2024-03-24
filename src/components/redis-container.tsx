@@ -1,16 +1,19 @@
-import { KeyboardEventHandler, useState } from "react";
+import { KeyboardEventHandler, useMemo, useState } from "react";
 import { Input } from "./ui/input";
 import { Data } from "./types";
+import * as wasmPkg from "../pkg";
 import RedisResponses from "./redis-responses";
 
 const RedisContainer = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState<Data[]>([]);
+  const wasm = useMemo(() => new wasmPkg.WasmRunnerContainer(), []);
 
   const onKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (event.key === "Enter") {
+      const output = wasm.run(input);
+      setData([...data, { input, output }]);
       setInput("");
-      setData([...data, { input, output: "some wasm response" }]);
     }
   };
 
