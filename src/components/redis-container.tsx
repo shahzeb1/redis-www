@@ -22,15 +22,16 @@ const RedisContainer = () => {
   };
 
   return (
-    <div className="bg-slate-800 grow rounded-xl p-4 h-[calc(100vh-100pt)] md:h-[calc(100vh-64pt)]">
+    <div className="bg-slate-800 basis-2/3 rounded-xl p-4 h-[calc(100vh-100pt)] md:h-[calc(100vh-64pt)]">
       <div className="flex flex-col h-full">
         <RedisList data={data} ref={ref} />
         <div className="flex">
           <Input
-            placeholder="Enter in your Redis command here and press ⏎"
+            placeholder="Enter in Redis command and press ⏎"
             onChange={(e) => setInput(e.target.value)}
             value={input}
             onKeyDown={onKeyDown}
+            className="text-md"
           />
         </div>
       </div>
