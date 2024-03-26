@@ -31,10 +31,11 @@ const InfoContainer = () => {
           <a href="http://redis.com" target="_blank" className="underline">
             Redis
           </a>{" "}
-          is an in-memory data structure store, used as a database, cache, and
-          message broker. This is a Redis simulator which lets you try several
-          commands. The actual core is built using the Rust programming language
-          which was then compiled for the web via web-assembly.
+          is an in-memory data structure store. Used as a database, cache, and
+          message broker. <br />
+          This is a Redis simulator which lets you try several commands. The
+          actual core is written in Rust and then compiled for the web using
+          web-assembly.
         </div>
       </div>
       <div className="mt-8">Supported Commands:</div>

@@ -1,4 +1,11 @@
-import { KeyboardEventHandler, createRef, useMemo, useState } from "react";
+import {
+  KeyboardEventHandler,
+  createRef,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Input } from "./ui/input";
 import { Data } from "./types";
 import * as wasmPkg from "../pkg";
@@ -7,14 +14,33 @@ import RedisList from "./redis-list";
 const RedisContainer = () => {
   const [input, setInput] = useState("");
   const [data, setData] = useState<Data[]>([]);
+  const initialized = useRef(false);
   const ref = createRef<HTMLDivElement>();
   const wasm = useMemo(() => new wasmPkg.WasmRunnerContainer(), []);
 
+  // Seed things with a few sample commands
+  useEffect(() => {
+    // This is preventing React strict mode from running
+    // this useEffect twice during development.
+    // I love frontend development and React.
+    if (!initialized.current) {
+      initialized.current = true;
+      saveAndRunCommand("SET coffee_shop_name Sunrise Coffee");
+      saveAndRunCommand("SET employee_count 10");
+      saveAndRunCommand("GET coffee_shop_name");
+      saveAndRunCommand("INCR employee_count");
+    }
+  }, []);
+
+  const saveAndRunCommand = (input: string) => {
+    const output = wasm.run(input);
+    setData((data) => [...data, { input, output }]);
+    setInput("");
+  };
+
   const onKeyDown: KeyboardEventHandler<HTMLInputElement> = (event) => {
     if (event.key === "Enter") {
-      const output = wasm.run(input);
-      setData([...data, { input, output }]);
-      setInput("");
+      saveAndRunCommand(input);
 
       // How we scroll to the bottom of the responses:
       ref.current?.scrollIntoView({ behavior: "smooth" });
