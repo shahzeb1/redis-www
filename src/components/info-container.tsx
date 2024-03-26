@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, BookOpenText } from "lucide-react";
 import { Button } from "./ui/button";
 
 const InfoContainer = () => {
@@ -68,6 +68,10 @@ const InfoContainer = () => {
           >
             <Github width={20} className="mr-2" />
             Website Code
+          </Button>
+          <Button onClick={() => goToUrl("https://blog.shahzeb.co")}>
+            <BookOpenText width={20} className="mr-2" />
+            Blogpost
           </Button>
         </div>
       </div>
