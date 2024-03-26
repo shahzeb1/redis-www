@@ -60,13 +60,13 @@ const InfoContainer = () => {
           <Button
             onClick={() => goToUrl("https://github.com/shahzeb1/redis-rs")}
           >
-            <Github />
+            <Github width={20} className="mr-2" />
             Rust Redis Code
           </Button>
           <Button
             onClick={() => goToUrl("https://github.com/shahzeb1/redis-www")}
           >
-            <Github />
+            <Github width={20} className="mr-2" />
             Website Code
           </Button>
         </div>
