@@ -36,7 +36,7 @@ const BlogAndCodeLink = () => (
     </a>
     .{" "}
     <a
-      href="https://blog.shahzeb.co/p/building-chatgpt-clone"
+      href="https://blog.shahzeb.co/p/learn-rust"
       className="underline underline-offset-4"
       target="_blank"
     >

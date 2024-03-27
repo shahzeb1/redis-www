@@ -69,7 +69,9 @@ const InfoContainer = () => {
             <Github width={20} className="mr-2" />
             Website Code
           </Button>
-          <Button onClick={() => goToUrl("https://blog.shahzeb.co")}>
+          <Button
+            onClick={() => goToUrl("https://blog.shahzeb.co/p/learn-rust")}
+          >
             <BookOpenText width={20} className="mr-2" />
             Blogpost
           </Button>
